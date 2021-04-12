@@ -82,7 +82,6 @@ router.get(
       res.json(post);
     } catch(err) {
       console.error(err.message);
-      console.log("ERROR: ", err.kind);
       if(err.kind === "ObjectId") {
         return res.status(404).json({ msg: "Post not found" });
       }
@@ -157,10 +156,8 @@ router.put(
   "/unlike/:id",
   auth,
   async (req, res) => {
-    console.log("START");
     try {
       const post = await Post.findById(req.params.id);
-      console.log("POST: ", req.user);
 
       // check if the post has already been liked
       if(post.likes.filter(like => like.user.toString() === req.user.id).length === 0) {
@@ -175,7 +172,6 @@ router.put(
 
       res.json(post.likes);
     } catch (err) {
-      console.log("ERROR: ", err);
       console.error(err.message);
       res.status(500).send("Server Error");
     }
@@ -241,9 +237,6 @@ router.delete(
       if(!comment) {
         return res.status(404).json({ msg: "Comment does not exist" })
       }
-
-      console.log("COMMENT: ", comment);
-      console.log("USER: ", req.user);
 
       // Check user
       if(comment.user.toString() !== req.user.id) {
