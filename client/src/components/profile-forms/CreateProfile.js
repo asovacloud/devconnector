@@ -35,7 +35,7 @@ const CreateProfile = ({ createProfile, history }) => {
     linkedin,
     youtube,
     instagram,
-  } = "formData";
+  } = formData;
 
   const handleOnChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
