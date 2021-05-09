@@ -71,17 +71,14 @@ router.post(
     if (status) profileFields.status = status;
     if (githubusername) profileFields.githubusername = githubusername;
 
-    const skillsType = typeof skills;
-    if (skills && skillsType === "string") {
+    if (skills) {
       profileFields.skills = skills.split(",").map((skill) => skill.trim());
-    } else if (skills && skillsType === "object") {
-      profileFields.skills = skills;
     }
 
     // Build social object
     profileFields.social = {};
     if (youtube) profileFields.social.youtube = youtube;
-    if (facebook) profileFields.social.fecebook = facebook;
+    if (facebook) profileFields.social.facebook = facebook;
     if (twitter) profileFields.social.twitter = twitter;
     if (instagram) profileFields.social.instagram = instagram;
     if (linkedin) profileFields.social.linkedin = linkedin;
