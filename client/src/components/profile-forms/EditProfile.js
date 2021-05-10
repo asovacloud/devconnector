@@ -35,15 +35,15 @@ const EditProfile = ({
       website: loading || !profile.website ? "" : profile.website,
       location: loading || !profile.location ? "" : profile.location,
       status: loading || !profile.status ? "" : profile.status,
-      skills: loading || !profile.skills ? "" : profile.skills,
+      skills: loading || !profile.skills ? "" : profile.skills.join(","),
       githubusername:
         loading || !profile.githubusername ? "" : profile.githubusername,
       bio: loading || !profile.bio ? "" : profile.bio,
-      twitter: loading || !profile.social ? "" : profile.social.twitter,
-      facebook: loading || !profile.social ? "" : profile.social.facebook,
-      linkedin: loading || !profile.social ? "" : profile.social.linkedin,
-      youtube: loading || !profile.social ? "" : profile.social.youtube,
-      instagram: loading || !profile.social ? "" : profile.social.instagram,
+      twitter: loading || !profile.social ? "" : profile.social[0].twitter,
+      facebook: loading || !profile.social ? "" : profile.social[0].facebook,
+      linkedin: loading || !profile.social ? "" : profile.social[0].linkedin,
+      youtube: loading || !profile.social ? "" : profile.social[0].youtube,
+      instagram: loading || !profile.social ? "" : profile.social[0].instagram,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
@@ -250,6 +250,7 @@ const EditProfile = ({
 
 EditProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
+  getCurrentProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
 };
 
