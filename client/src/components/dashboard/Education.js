@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Moment from "react-moment";
 
 const Education = ({ education }) => {
+  // Render educations
   const educations = education.map((edu) => (
     <tr key={edu._id}>
       <td>{edu.school}</td>
