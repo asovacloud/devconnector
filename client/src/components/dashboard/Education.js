@@ -21,6 +21,7 @@ const Education = ({ education }) => {
       </td>
     </tr>
   ));
+  // Return content
   return (
     <>
       <h2 className="my-2">Education Credentials</h2>
