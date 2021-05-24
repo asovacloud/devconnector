@@ -69,7 +69,7 @@ router.get("/:id", auth, async (req, res) => {
   } catch (err) {
     console.error(err.message);
     if (err.kind === "ObjectId") {
-      return res.status(404).json({ msg: "Post not found." });
+      return res.status(404).json({ msg: "Post not found!" });
     }
     res.status(500).send("Server Error");
   }
@@ -88,7 +88,7 @@ router.delete("/:id", auth, async (req, res) => {
 
     // Check user
     if (post.user.toString() !== req.user.id) {
-      return res.status(401).json({ msg: "User not authorized." });
+      return res.status(401).json({ msg: "User not authorized!" });
     }
 
     await post.remove();
