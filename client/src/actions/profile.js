@@ -49,7 +49,7 @@ export const createProfile =
 
       dispatch(
         setAlert(
-          edit ? "Profile was Updated" : "Profile was Created",
+          edit ? "Profile was Updated." : "Profile was Created.",
           "success"
         )
       );
