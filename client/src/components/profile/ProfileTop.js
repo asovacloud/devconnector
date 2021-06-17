@@ -25,21 +25,51 @@ const ProfileTop = ({
             <i className="fas fa-globe fa-2x"></i>
           </a>
         )}
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-twitter fa-2x"></i>
-        </a>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-facebook fa-2x"></i>
-        </a>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-linkedin fa-2x"></i>
-        </a>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-youtube fa-2x"></i>
-        </a>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-instagram fa-2x"></i>
-        </a>
+        {social && social[0] && social[0]["twitter"] && (
+          <a
+            href={social[0]["twitter"]}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-twitter fa-2x"></i>
+          </a>
+        )}
+        {social && social[0] && social[0]["facebook"] && (
+          <a
+            href={social[0]["facebook"]}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-facebook fa-2x"></i>
+          </a>
+        )}
+        {social && social[0] && social[0]["linkedin"] && (
+          <a
+            href={social[0]["linkedin"]}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-linkedin fa-2x"></i>
+          </a>
+        )}
+        {social && social[0] && social[0]["youtube"] && (
+          <a
+            href={social[0]["youtube"]}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-youtube fa-2x"></i>
+          </a>
+        )}
+        {social && social[0] && social[0]["instagram"] && (
+          <a
+            href={social[0]["instagram"]}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-instagram fa-2x"></i>
+          </a>
+        )}
       </div>
     </div>
   );
