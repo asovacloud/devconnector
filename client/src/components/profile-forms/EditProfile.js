@@ -183,6 +183,17 @@ const EditProfile = ({
         {displaySocialInputs && (
           <>
             <div className="form-group social-input">
+              <i className="fas fa-globe fa-2x"></i>
+              <input
+                type="text"
+                placeholder="Website URL"
+                name="website"
+                value={website}
+                onChange={(e) => handleOnChange(e)}
+              />
+            </div>
+
+            <div className="form-group social-input">
               <i className="fab fa-twitter fa-2x"></i>
               <input
                 type="text"
