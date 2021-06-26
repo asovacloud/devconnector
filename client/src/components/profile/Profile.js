@@ -65,7 +65,7 @@ const Profile = ({
                   ))}
                 </>
               ) : (
-                <h4>No education credentials</h4>
+                <h4>No education credentials.</h4>
               )}
             </div>
           </div>
