@@ -8,7 +8,11 @@ const ProfileGithub = ({ username, getGithubRepos, repos }) => {
   return <div></div>;
 };
 
-ProfileGithub.propTypes = {};
+ProfileGithub.propTypes = {
+  getGithubRepos: PropTypes.func.isRequired,
+  repos: PropTypes.array.isRequired,
+  username: PropTypes.string.isRequired,
+};
 
 const mapStateToProps = (state) => ({
   repos: state.profile.repos,
